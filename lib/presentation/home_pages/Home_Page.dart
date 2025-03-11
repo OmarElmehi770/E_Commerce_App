@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:e_commerce_app/data/model/Product_response.dart';
 import 'package:flutter/material.dart';
 import '/data/api_manger/api_manger.dart';
@@ -98,7 +99,7 @@ class Product_Container extends StatelessWidget {
                       topRight: Radius.circular(10),
                     ),
                   ),
-                  child: Image.network(image_url),
+                  child: CachedNetworkImage(imageUrl: image_url),
                 ),
                 Text(Product_name),
                 Text('$Product_price \$'),

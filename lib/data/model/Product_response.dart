@@ -6,7 +6,6 @@ class ProductResponce {
   String ?description ;
   List<dynamic>?images ;
 
-
   ProductResponce(this.id,this.title,this.slug,this.price,this.description,this.images);
 
   ProductResponce.fromJson( Map<String,dynamic>json ){
@@ -17,5 +16,4 @@ class ProductResponce {
     description=json["description"];
     images=json["images"];
   }
-
 }
