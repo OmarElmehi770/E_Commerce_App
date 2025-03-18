@@ -14,7 +14,7 @@ class Home extends StatelessWidget {
       body: Padding(
         padding: EdgeInsets.all(10),
         child: FutureBuilder<List<ProductResponce>>(
-            future: apiManger().getAllProducts(),
+            future: ApiManger().getAllProducts(),
 
             builder: (context, AsyncSnapshot<List<ProductResponce>> snapshot) {
               if(snapshot.connectionState==ConnectionState.waiting){

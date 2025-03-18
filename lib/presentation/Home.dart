@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 import 'home_pages/Home_Page.dart';
@@ -22,9 +23,9 @@ class _HomeState extends State<Homepage> {
     return Scaffold(
       body: Pages[CurrentIndex],
       bottomNavigationBar: BottomNavigationBar(items: [
-        BottomNavigationBarItem(icon: Icon(Icons.home),label: "Home"),
-        BottomNavigationBarItem(icon: Icon(Icons.search),label: "Search"),
-        BottomNavigationBarItem(icon: Icon(Icons.person),label: "Profile"),
+        BottomNavigationBarItem(icon: Icon(Icons.home),label:      "Home".tr()),
+        BottomNavigationBarItem(icon: Icon(Icons.search),label:  "Search".tr()),
+        BottomNavigationBarItem(icon: Icon(Icons.person),label: "Profile".tr()),
       ],
         currentIndex: CurrentIndex,
         onTap: (val){

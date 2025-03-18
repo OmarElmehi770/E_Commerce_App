@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 import '../../data/api_manger/api_manger.dart';
@@ -33,7 +34,7 @@ class _SearchPageState extends State<SearchPage> {
                 focusedBorder:
                     OutlineInputBorder(borderRadius: BorderRadius.circular(15)),
                 label: Text(
-                  'Search products...',
+                  'Search products...'.tr(),
                   style: TextStyle(color: Colors.grey),
                 ),
                 enabledBorder:
@@ -47,7 +48,7 @@ class _SearchPageState extends State<SearchPage> {
               },
             ),
             FutureBuilder<ProductResponce>(
-              future: apiManger().searchProducts(search),
+              future: ApiManger().searchProducts(search),
               builder: (context, AsyncSnapshot<ProductResponce> snapshot) {
                 if (snapshot.connectionState == ConnectionState.waiting) {
                   return Center(

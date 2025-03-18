@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class ProfilePage extends StatelessWidget {
@@ -23,22 +24,22 @@ class ProfilePage extends StatelessWidget {
               Text("omar770949@gmail.com",style: TextStyle(fontSize: 15,color:Colors.grey,fontWeight: FontWeight.bold,),),
               SizedBox(height: 50,),
               ListTile(
-                title: Text("My Orders"),
+                title: Text("My Orders".tr()),
                 leading: Icon(Icons.shopping_bag_rounded),
                 trailing: Icon(Icons.arrow_forward_ios),
               ),
               ListTile(
-                title: Text("Help & Support"),
+                title: Text("Help & Support".tr()),
                 leading: Icon(Icons.help),
                 trailing: Icon(Icons.arrow_forward_ios),
               ),
               ListTile(
-                title: Text("About Us"),
+                title: Text("About Us".tr()),
                 leading: Icon(Icons.info),
                 trailing: Icon(Icons.arrow_forward_ios),
               ),
               ListTile(
-                title: Text("Change Theme"),
+                title: Text("Change Theme".tr()),
                 leading: Icon(Icons.light_mode_outlined),
                 trailing: Icon(Icons.arrow_forward_ios),
               ),
@@ -51,7 +52,7 @@ class ProfilePage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Icon(Icons.logout),
-                    Text("Logout"),
+                    Text("Logout".tr()),
                   ],
                 ),
                 style: ElevatedButton.styleFrom(
