@@ -2,6 +2,7 @@ import 'package:e_commerce_app/data/api_manger/api_manger.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:restart_app/restart_app.dart';
+import '../data/model/register_responce.dart';
 import 'Home.dart';
 import 'Sign_up.dart';
 
@@ -189,8 +190,8 @@ class _SignInState extends State<SignIn> {
         child: CircularProgressIndicator(),
       ),
     );
-    await apiManger.signIn(email, password);
-    if (apiManger.signIn(email, password) != null) {
+    RegisterResponce? responce = await apiManger.signIn(email, password);
+    if (responce != null) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('Successfully')),
       );
@@ -200,6 +201,7 @@ class _SignInState extends State<SignIn> {
             builder: (context) => Homepage(),
           ));
     } else {
+      Navigator.pop(context);
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('Error')),
       );

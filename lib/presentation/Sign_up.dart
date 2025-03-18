@@ -3,6 +3,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:restart_app/restart_app.dart';
 import '../data/api_manger/api_manger.dart';
+import '../data/model/register_responce.dart';
 import 'Sign_in.dart';
 
 class SignUp extends StatefulWidget {
@@ -246,14 +247,15 @@ class _SignUpState extends State<SignUp> {
   ) async {
     ApiManger apiManger = ApiManger();
     showDialog(context: context, builder: (context) => Center(child: CircularProgressIndicator(),),);
-    await apiManger.register(name, email, password);
-    if(apiManger.register(name, email, password) != null){
+    RegisterResponce? responce = await apiManger.register(name, email, password);
+    if(responce != null){
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('Successfully')),
       );
-      Navigator.pop(context);
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => SignIn(),));
     }
     else {
+      Navigator.pop(context);
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('Error')),
       );

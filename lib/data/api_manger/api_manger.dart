@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 import '../../presentation/home_pages/Search_Page.dart';
 import '../model/Product_response.dart';
+import '../model/register_responce.dart';
 
 class ApiManger {
 //String baseUrl ='https://api.escuelajs.co/api/v1/products/' ;
@@ -49,7 +50,7 @@ class ApiManger {
     return ProductResponce.fromJson(data);
   }
 
-  register(
+  Future<RegisterResponce?>register(
     String name,
     String email,
     String password,
@@ -61,6 +62,8 @@ class ApiManger {
         "name": name,
         "avatar": "https://i.imgur.com/LDOO4Qs.jpg",
       });
+
+      return RegisterResponce.fromJson(Response.data);
     } catch (e) {
       print(e.toString());
       return null;
@@ -76,6 +79,8 @@ class ApiManger {
         "email": email,
         "password": password,
       });
+
+      return RegisterResponce.fromJson(Response.data);
     } catch (e) {
       print(e.toString());
       return null;
