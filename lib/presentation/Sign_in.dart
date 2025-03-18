@@ -195,7 +195,7 @@ class _SignInState extends State<SignIn> {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('Successfully')),
       );
-      Navigator.push(
+      Navigator.pushReplacement(
           context,
           MaterialPageRoute(
             builder: (context) => Homepage(),
